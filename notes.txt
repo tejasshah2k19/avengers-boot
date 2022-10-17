@@ -1,0 +1,49 @@
+spring - core 
+	1) BeanFactory
+	2) ApplicationContext 
+		2.1) ClassPathXmlApplicationContext 
+
+IoC -> SingletonDesign pattern 
+		class - instance - single time create 
+    -> DI 
+	class A 
+		class B 
+    -> spring.xml 
+	init destroy 
+-> core bean context el 
+	
+spring-web-mvc
+ 	-> spring-web-mvc -> 
+	-> webapp 
+	-> DispatcherServlet 
+		-> XmlWebApplicationContext : IoC 
+
+
+spring-boot -> zero configuration 
+	webapp
+	REST Api 
+eclipse 
+STS 
+	boot project => 
+	
+	spring starter project 
+	1) spring web
+	2) spring dev tools 
+	
+	
+	http://localhost:9898
+
+default -> jsp 
+
+how to add support for jsp!
+1) tomcat embeded jasper -> jsp 
+2) jsp => views => config 
+ 
+	
+com.controller 
+		SessionController ->@Controller 
+			@Getmapping("/signup")
+				Signup.jsp 	
+	
+	
+	
