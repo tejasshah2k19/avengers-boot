@@ -25,7 +25,7 @@ spring-boot -> zero configuration
 eclipse 
 STS 
 	boot project => 
-	
+	file -> new -> 	
 	spring starter project 
 	1) spring web
 	2) spring dev tools 
@@ -39,7 +39,10 @@ how to add support for jsp!
 1) tomcat embeded jasper -> jsp 
 2) jsp => views => config 
  
-	
+webapp folder is inside main folder 
+	inside webapp we create WEB-INF folder 
+			inside WEB-INF we create views folder 
+				
 com.controller 
 		SessionController ->@Controller 
 			@Getmapping("/signup")
