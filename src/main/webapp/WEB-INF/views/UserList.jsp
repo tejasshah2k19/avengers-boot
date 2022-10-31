@@ -22,7 +22,11 @@
 				<td>${user.userId}</td>
 				<td>${user.firstName}</td>
 				<td>${user.email}</td>
-				<td> <a href="deleteuser?userId=${user.userId}">Delete</a> | Edit </td>
+				<td> <a href="deleteuser?userId=${user.userId}">Delete</a> | 
+				
+					<a href="edituser?userId=${user.userId}">Edit</a>
+				
+				 </td>
 			</tr>
 		</c:forEach>
 
