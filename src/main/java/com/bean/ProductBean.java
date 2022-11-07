@@ -1,9 +1,10 @@
 package com.bean;
 
 public class ProductBean {
+	private Integer productId;
 	private String name;
 	private float price;
-	private int qty;
+	private Integer qty;
 
 	public String getName() {
 		return name;
@@ -21,11 +22,19 @@ public class ProductBean {
 		this.price = price;
 	}
 
-	public int getQty() {
+	public Integer getProductId() {
+		return productId;
+	}
+
+	public void setProductId(Integer productId) {
+		this.productId = productId;
+	}
+
+	public Integer getQty() {
 		return qty;
 	}
 
-	public void setQty(int qty) {
+	public void setQty(Integer qty) {
 		this.qty = qty;
 	}
 

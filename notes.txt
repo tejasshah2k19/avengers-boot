@@ -66,6 +66,22 @@ REST API
 2) method -> saveProduct() -> @PostMapping("/product") -> return "" -> 
 3) method's argument -> @RequestBody ProductBean product
 	
+in spring boot default input is url encoded / form data  
+so if we need json we need to add only @RequestBody so that spring can get idea that you are passing json 
+and I have to read this only
+we don't need to convert input in  json and store into bean this things are done by spring boot
+we just only need to add @RequestBody in method's  argument. 
+
+
+
+
+1) pom.xml -> databasae  driver -> 
+2) application.properties -> db configuration 
+3) DAo -> method -> query -> JdbcTemplate 
+
+
+
+
 	
 	
 	
