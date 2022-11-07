@@ -50,3 +50,22 @@ com.controller
 	
 	
 	
+
+REST API
+	
+	1) json 
+	2) urls 
+			NEW 	: POST 
+			UPDATE  : PUT
+			DESTROY : DELETE  
+			READ 	: GET 
+	
+	
+	
+1) ProductController -> @RestController 
+2) method -> saveProduct() -> @PostMapping("/product") -> return "" -> 
+3) method's argument -> @RequestBody ProductBean product
+	
+	
+	
+	
