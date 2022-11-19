@@ -79,6 +79,14 @@ we just only need to add @RequestBody in method's  argument.
 2) application.properties -> db configuration 
 3) DAo -> method -> query -> JdbcTemplate 
 
+----------------------------------------
+1) create wishlist table , wishlistid userid and productid 
+
+2) api -> productid userid 
+	so we need WishListBean with all three db field 
+
+3) WishListController-> addWishList()
+
 
 
 
