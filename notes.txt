@@ -101,6 +101,11 @@ heroku login - terminal
 
 in terminal copy paste deployment command 
 
+
+add Procfile in root directory of your project paste below code 
+web: java -Dserver.port=$PORT -jar target/*.war
+
+
 git init 
 heroku git:remote -a finaltryroyal
 
@@ -110,6 +115,7 @@ git commit -am "make it better"
 
 git push heroku master
 
+heroku ps:scale  web=1 
 
 
 
