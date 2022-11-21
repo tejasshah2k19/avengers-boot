@@ -87,6 +87,32 @@ we just only need to add @RequestBody in method's  argument.
 
 3) WishListController-> addWishList()
 
+----
+download and install heroku cli 
+
+
+heroku login browser 
+
+create app in heroku 
+
+go to your project terminal
+ 
+heroku login - terminal 
+
+in terminal copy paste deployment command 
+
+git init 
+heroku git:remote -a finaltryroyal
+
+git add .
+
+git commit -am "make it better"
+
+git push heroku master
+
+
+
+
 
 
 

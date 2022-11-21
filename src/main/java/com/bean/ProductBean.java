@@ -1,7 +1,11 @@
 package com.bean;
 
 public class ProductBean {
-	private Integer productId;
+	// naming convention optional -> no error
+	// when we use framework -> compulsory
+	// convention over of the configuration
+	// pan -> pna vado -> chokadi
+	private Integer productId; // productid productid bean-> private can get setter private constru
 	private String name;
 	private float price;
 	private Integer qty;

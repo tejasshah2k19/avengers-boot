@@ -36,7 +36,7 @@ public class ProductController {
 
 	@GetMapping("/products")
 	public List<ProductBean> getAllProducts() {
-		List<ProductBean> products = new ArrayList<ProductBean>();
+		List<ProductBean> products = productDao.getAllProudcts();;
 		return products;
 	}
 

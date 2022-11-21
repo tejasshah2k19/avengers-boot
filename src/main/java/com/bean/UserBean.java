@@ -1,11 +1,12 @@
 package com.bean;
 
 public class UserBean {
-	Integer userId;
+	Integer userId;// userid user_id userId
 	String firstName;
 	String lastName;
 	String email;
 	String password;
+	String token;
 
 	public Integer getUserId() {
 		return userId;
@@ -45,6 +46,14 @@ public class UserBean {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
 	}
 
 }

@@ -11,12 +11,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bean.UserBean;
 import com.dao.UserDao;
+import com.dto.LoginDto;
+import com.service.TokenGenerator;
 
 @Controller
 public class SessionController {
 
 	@Autowired
 	UserDao userDao;
+	@Autowired
+	TokenGenerator tokenGenerator;
 
 	@GetMapping("/signup")
 	public String signup() {
@@ -51,9 +55,9 @@ public class SessionController {
 	}
 
 	@GetMapping("/edituser")
-	public String editUser(@RequestParam("userId") int userId,Model model) {
+	public String editUser(@RequestParam("userId") int userId, Model model) {
 		UserBean user = userDao.getUserByUserId(userId);
-		model.addAttribute("user",user);
+		model.addAttribute("user", user);
 		return "EditUser";
 	}
 
@@ -62,22 +66,18 @@ public class SessionController {
 		userDao.updateUser(user);
 		return "redirect:/listuser";
 	}
-	
-	
 
+	// login
+	// email password
+	// validate -> correct --> authentication ->
+	// token generate -> db store -> response
+	@PostMapping("/login")
+	public UserBean login(LoginDto loginDto) {
+		// email password ->db -> true
+		// tokenGenerate -> db save user
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		String token = tokenGenerator.generateToken();
+		//dao.updateToken(token,userId); 
+		return null;
+	}
 }
