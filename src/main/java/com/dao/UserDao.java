@@ -34,7 +34,17 @@ public class UserDao {
 	}
 
 	public void updateUser(UserBean user) {
-			stmt.update("update users set firstname = ? where userid = ? ",user.getFirstName(),user.getUserId());
+		stmt.update("update users set firstname = ? where userid = ? ", user.getFirstName(), user.getUserId());
+	}
+
+	public UserBean getByEmail(String email) {
+		try {
+			return stmt.queryForObject("select * from users where email = ? ",
+					new BeanPropertyRowMapper<UserBean>(UserBean.class), new Object[] { email });
+		} catch (Exception e) {
+			System.out.println("User Not found with => " + email);
+			return null;
+		}
 	}
 
 }

@@ -117,8 +117,12 @@ git push heroku master
 
 heroku ps:scale  web=1 
 
+heroku logs --tail 
 
+--- -----------------------------------------------------------
 
+api -> token -> db save 
+-> request -> token -> verify -> accept [ icard ] [ number ]
 
 
 
