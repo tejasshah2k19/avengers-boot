@@ -31,24 +31,17 @@ public class ProductController {
 
 	// new
 	@PostMapping("/product")
-	public ResponseEntity saveProduct(@RequestHeader("token") String token, @RequestBody ProductBean product) {
+	public ResponseEntity saveProduct(@RequestBody ProductBean product) {
 		System.out.println(product.getName());
 		System.out.println(product.getPrice());
 		System.out.println(product.getQty());
-		System.out.println("token => " + token);
-		if (token == null || userDao.isValidToken(token) == false) {
-			// reject
-			ResponseEntity r = new ResponseEntity("Please Provide Valid Token", HttpStatus.FORBIDDEN);
-			return r;
 
-		} else {
+		productDao.saveProduct(product);
 
-			productDao.saveProduct(product);
+		System.out.println("Product Added....");
+		ResponseEntity r = new ResponseEntity(product, HttpStatus.OK);
+		return r;
 
-			System.out.println("Product Added....");
-			ResponseEntity r = new ResponseEntity(product, HttpStatus.OK);
-			return r;
-		}
 	}
 
 	@GetMapping("/products")

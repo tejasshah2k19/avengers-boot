@@ -27,7 +27,8 @@ public class ProductDao {
 
 	public ProductBean getProductById(int productId) {
 		// TODO Auto-generated method stub
-		return null;
+		return stmt.queryForObject("select * from products where productid = ? ",
+				new BeanPropertyRowMapper<ProductBean>(ProductBean.class), new Object[] { productId });
 	}
 
 	public void updateProduct(ProductBean product) {
