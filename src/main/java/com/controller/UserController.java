@@ -10,11 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bean.UserBean;
 import com.dao.UserDao;
 import com.dto.LoginDto;
+import com.service.TokenGenerator;
 
+
+///public
 @RestController
 public class UserController {
 	@Autowired
 	UserDao userDao;
+	@Autowired
+	TokenGenerator tokenGenerator;
 
 	// login rest api
 	@PostMapping("/authenticateuser")
@@ -26,6 +31,12 @@ public class UserController {
 			r = new ResponseEntity(login, HttpStatus.FORBIDDEN);
 
 		} else {
+
+			String token = tokenGenerator.generateToken();
+			user.setToken(token);
+			
+			userDao.updateToken(user.getUserId(), user.getToken());
+			
 			r = new ResponseEntity(user, HttpStatus.OK);
 		}
 		return r;

@@ -47,4 +47,18 @@ public class UserDao {
 		}
 	}
 
+	public void updateToken(int userId, String token) {
+		stmt.update("update users set token = ? where userid = ? ", token, userId);
+	}
+
+	public boolean isValidToken(String token) {
+		List<UserBean> users = stmt.query("select * from users where token  = ? ",
+				new BeanPropertyRowMapper<UserBean>(UserBean.class), new Object[] { token });
+		if (users.size() == 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 }
