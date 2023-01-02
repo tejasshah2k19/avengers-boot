@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 import com.dao.UserDao;
 
-@Component
+ 
 public class AuthTokenFilter implements Filter {
 
 	@Autowired
@@ -35,7 +35,7 @@ public class AuthTokenFilter implements Filter {
 		System.out.println("url => " + url);
 		System.out.println("uri => " + uri);
 
-		if (uri.contains("/public/")) {
+		if (uri.contains("/public/") || url.contains("swagger") || url.contains("api-docs")) {
 			System.out.println("Public api call---by pass AuthTokenFilter");
 			chain.doFilter(request, response);
 		} else {

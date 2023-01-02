@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.ProductBean;
+import com.bean.ResponseBean;
 import com.dao.ProductDao;
 import com.dao.UserDao;
 
@@ -61,10 +62,21 @@ public class ProductController {
 		return products;
 	}
 
+//	@GetMapping("/product/{productId}")
+//	public ProductBean getProductByProductId(@PathVariable("productId") int productId) {
+//		ProductBean productBean = productDao.getProductById(productId);
+//		return productBean;
+//	}
+
 	@GetMapping("/product/{productId}")
-	public ProductBean getProductByProductId(@PathVariable("productId") int productId) {
+	public ResponseBean<ProductBean> getProductByProductId(@PathVariable("productId") int productId) {
 		ProductBean productBean = productDao.getProductById(productId);
-		return productBean;
+		ResponseBean<ProductBean> r = new ResponseBean<>();
+		r.setData(productBean);
+		r.setMsg("Product retereived..");
+		r.setStatus(200);
+
+		return r;
 	}
 
 	@PutMapping("/product")

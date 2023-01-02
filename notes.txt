@@ -125,6 +125,51 @@ api -> token -> db save
 -> request -> token -> verify -> accept [ icard ] [ number ]
 
 
+---------------------------------------------------------------
+CustomResponse :-
+
+	
+--------------------------------------------------------
+
+cloud base configuration 
+
+Discovery 
+
+
+MAsterApi
+	localhost:9898	
+	 
+
+PlaceApi --server down [ hystrik dashboard ] 
+	ask discoveryApi 
+
+AWS-StorageApi 
+	
+devops -> linux -> commands -> aws -> docker -> jenkins -> 
+docker 
+
+
+swagger doc
+
+50 api -> 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 	
